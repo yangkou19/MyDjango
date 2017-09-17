@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>users</title>
+    <link rel="stylesheet" href="{% static "/css/master.css"%}">
+  </head>
+  <body>
+    <div class="djangtwo">
+      {% if users %}
+        <table>
+          <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </thead>
+          {% for u in users %}
+            <tr>
+              <td>{{ u.first_name}}</td>
+              <td>{{ u.last_name}}</td>
+              <td>{{ u.email }}</td>
+            </tr>
+          {% endfor%}
+        </table>
+        {% else %}
+          <p>No users</p>
+        {% endif %}
+
+    </div>
+
+  </body>
+</html>
