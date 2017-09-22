@@ -3,9 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Here are the users</h1>
+    <div class="container">
+      <h1>Please sign up here!</h1>
+      <form method="POST">
+      <!-- both POST and post are fine -->
+
+        {{form.as_p}}
+        <!-- as_p means each widget is in <p> tag -->
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+
+      </form>
+
+    </div>
+    <!-- <h1>Here are the users</h1>
     {% if users%}
     <ol>
       {% for person in users %}
@@ -17,6 +31,6 @@
         </ul>
       {% endfor%}
     </ol>
-    {% endif %}
+    {% endif %} -->
   </body>
 </html>
